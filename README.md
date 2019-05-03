@@ -26,18 +26,22 @@ Este projeto serve como um "starter" para o projeto "IPTGram" para a Unidade Cur
 
 ### Visual Studio
 
-1. Abrir o ficheiro `IPTGram.csproj` através da opção `File > Open > Project/Solution...`.
-2. Abrir o `Package Manager Console`.
-3. Restaurar os NuGet packages, se necessário.
-4. Executar o comando `Update-Database -Verbose` para criar a base de dados.
+1. Ler este ficheiro na íntegra.
+2. Transferir os ficheiros necessários do GitHub, Moodle, e afins.
+3. Abrir o ficheiro `IPTGram.csproj` através da opção `File > Open > Project/Solution...`.
+4. Abrir o `Package Manager Console`.
+5. Restaurar os NuGet packages, se necessário.
+6. Executar o comando `Update-Database -Verbose` para criar a base de dados.
 
 ### Visual Studio Code
 
-1. Abrir a pasta do projecto no Visual Studio Code.
-2. Certificar que a extensão [c#](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp) está instalada.
-3. Abrir um terminal na pasta do projecto.
-4. No terminal, executar `dotnet restore` para restaurar os NuGet packages.
-5. No terminal, executar `dotnet ef database update` para criar a base de dados.
+1. Ler este ficheiro na íntegra.
+2. Transferir os ficheiros necessários do GitHub, Moodle, e afins.
+3. Abrir a pasta do projecto no Visual Studio Code.
+4. Certificar que a extensão [c#](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp) está instalada.
+5. Abrir um terminal na pasta do projecto.
+6. No terminal, executar `dotnet restore` para restaurar os NuGet packages.
+7. No terminal, executar `dotnet ef database update` para criar a base de dados.
 
 ## Base de dados
 

@@ -1,0 +1,154 @@
+[
+  {
+    "UserName": "example",
+    "Name": "User de exemplo",
+    "Password": "",
+    "Id": "cd4c8817-d909-445d-a4ac-2e04c9e89eba"
+  },
+  {
+    "UserName": "casimiro",
+    "Name": "José Casimiro",
+    "Password": "",
+    "Id": "0622c654-a38d-424d-9708-8ffffae600f4"
+  },
+  {
+    "Password": "",
+    "IsDefault": true,
+    "Id": "6af39899-015f-40eb-a367-cd33ae8832d7",
+    "UserName": "AnnaRomanchenko",
+    "Name": "Anna Romanchenko"
+  },
+  {
+    "Password": "",
+    "IsDefault": true,
+    "Id": "b123c35c-46f9-4de9-b7bb-8312f3ddfc8e",
+    "UserName": "VitalyVlasov",
+    "Name": "Vitaly Vlasov"
+  },
+  {
+    "Password": "",
+    "IsDefault": true,
+    "Id": "439f1f37-9569-4e76-8c41-a82ba1fbe907",
+    "UserName": "Halilograph",
+    "Name": "Halilograph"
+  },
+  {
+    "Password": "",
+    "IsDefault": true,
+    "Id": "aee71b2c-303e-4ecd-ab95-80401087741a",
+    "UserName": "OlegMagni",
+    "Name": "Oleg Magni"
+  },
+  {
+    "Password": "",
+    "IsDefault": true,
+    "Id": "bb0ee9bd-70ff-419d-95dc-91247c8e24f7",
+    "UserName": "LisaFotios",
+    "Name": "Lisa Fotios"
+  },
+  {
+    "Password": "",
+    "IsDefault": true,
+    "Id": "e3e6b807-1e91-4064-a28d-d817fae09283",
+    "UserName": "JuniorTeixeira",
+    "Name": "Junior Teixeira"
+  },
+  {
+    "Password": "",
+    "IsDefault": true,
+    "Id": "013f8234-4701-4a39-bbd7-1bf8b57ec9cf",
+    "UserName": "VincentGerbouin",
+    "Name": "Vincent Gerbouin"
+  },
+  {
+    "Password": "",
+    "IsDefault": true,
+    "Id": "c22ea429-21b9-4e91-bb6b-b4da5d1acbd8",
+    "UserName": "MatheusBertelli",
+    "Name": "Matheus Bertelli"
+  },
+  {
+    "Password": "",
+    "IsDefault": true,
+    "Id": "f65a5df8-1ad3-4834-b30b-04eb8dfd7c76",
+    "UserName": "VikasSawant",
+    "Name": "Vikas Sawant"
+  },
+  {
+    "Password": "",
+    "IsDefault": true,
+    "Id": "666b699b-af2a-4a8e-a14f-3282d7ed412c",
+    "UserName": "ScottWebb",
+    "Name": "Scott Webb"
+  },
+  {
+    "Password": "",
+    "IsDefault": true,
+    "Id": "26f0a3b6-720a-4682-a163-e723a35cf209",
+    "UserName": "MarieLemaistre",
+    "Name": "Marie Lemaistre"
+  },
+  {
+    "Password": "",
+    "IsDefault": true,
+    "Id": "c90d0eef-a619-4aaa-94b6-dc944a9e7426",
+    "UserName": "MadisonInouye",
+    "Name": "Madison Inouye"
+  },
+  {
+    "Password": "",
+    "IsDefault": true,
+    "Id": "01895e13-bb7c-403b-9a06-d5eae81b9273",
+    "UserName": "MisaelGarcia",
+    "Name": "Misael Garcia"
+  },
+  {
+    "Password": "",
+    "IsDefault": true,
+    "Id": "8c93bf8f-dd6c-4979-94e7-054c8b58962f",
+    "UserName": "NaveenAnnam",
+    "Name": "Naveen Annam"
+  },
+  {
+    "Password": "",
+    "IsDefault": true,
+    "Id": "bc2058d5-a9ad-4cb7-8a90-a3ea20a7d824",
+    "UserName": "CameronCasey",
+    "Name": "Cameron Casey"
+  },
+  {
+    "Password": "",
+    "IsDefault": true,
+    "Id": "746b6957-4f87-4025-b544-b321ed50ed81",
+    "UserName": "AntonImbro",
+    "Name": "Anton Imbro"
+  },
+  {
+    "Password": "",
+    "IsDefault": true,
+    "Id": "15362b85-224e-45be-a81e-0809de316de0",
+    "UserName": "rawpixel.com",
+    "Name": "rawpixel.com"
+  },
+  {
+    "Password": "",
+    "IsDefault": true,
+    "Id": "7dad7117-9ede-4f2d-8aa3-4e35016bfe2f",
+    "UserName": "JeanvanderMeulen",
+    "Name": "Jean van der Meulen"
+  },
+  {
+    "Password": "",
+    "IsDefault": true,
+    "Id": "0f85a584-0937-4314-9627-73e8cfa84538",
+    "UserName": "PhilGoulson",
+    "Name": "Phil Goulson"
+  },
+  {
+    "Password": "",
+    "IsDefault": true,
+    "Id": "f7f36ade-36ff-4046-8c1c-829f25c33758",
+    "UserName": "SamirBelhamra",
+    "Name": "Samir Belhamra"
+  }
+]
