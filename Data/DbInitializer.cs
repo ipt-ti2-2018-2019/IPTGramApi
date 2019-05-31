@@ -13,6 +13,7 @@ namespace IPTGram.Data
     /// Inicializa a base de dados.
     /// Esta classe usa os ficheiros na pasta "SeedData" do projecto
     /// para adicionar os conteúdos à base de dados.
+    /// (Ver classe Startup, método Configure, para ver onde é usada)
     /// </summary>
     public class DbInitializer
     {
