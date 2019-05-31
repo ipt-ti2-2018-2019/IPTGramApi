@@ -1,3 +1,6 @@
+# Base de dados (se for SQLite)
+app.db
+
 # Created by https://www.gitignore.io/api/osx,linux,windows,aspnetcore,visualstudio,visualstudiocode
 
 # Edit at https://www.gitignore.io/?templates=osx,linux,windows,aspnetcore,visualstudio,visualstudiocode
