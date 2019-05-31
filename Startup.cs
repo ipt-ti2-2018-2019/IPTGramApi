@@ -37,6 +37,9 @@ namespace IPTGram
 
                 // Para usar MySQL
                 // dbContextOptions.UseMySQL(config.GetConnectionString("DefaultConnection"));
+
+                // Para usar SQLite
+                // dbContextOptions.UseSqlite(config.GetConnectionString("DefaultConnection"))
             });
 
             // Adicionar o ASP.NET Core Identity com Entity Framework.
@@ -48,14 +51,36 @@ namespace IPTGram
             })
             .AddEntityFrameworkStores<IPTGramDb>();
 
-            // Adicionar autenticação por cookies (notar que o AccountController precisa de ser criado,
-            // assim como configurar o [Authorize]).
-            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-                .AddCookie(cookieOptions =>
+            // Configurar autenticação por cookies (notar que o AccountController precisa de ser criado,
+            // assim como configurar o [Authorize] nos Controllers e Actions).
+            // Ver: https://github.com/ipt-ti2-2018-2019/ac-aula-12/blob/resolvido/exercicios/2-api-multas/ApiMultas/Controllers/AccountController.cs
+            // para um exemplo de um AccountController.
+            services.ConfigureApplicationCookie(cookieOptions =>
+            {
+                cookieOptions.Cookie.HttpOnly = true;
+
+                cookieOptions.LoginPath = new PathString("/api/account/login");
+                cookieOptions.LogoutPath = new PathString("/api/accont/logout");
+                cookieOptions.Cookie.SecurePolicy = CookieSecurePolicy.None;
+                cookieOptions.Cookie.SameSite = SameSiteMode.None;
+
+                cookieOptions.Events = new CookieAuthenticationEvents
                 {
-                    cookieOptions.LoginPath = new PathString("/api/account/login");
-                    cookieOptions.LogoutPath = new PathString("/api/accont/logout");
-                });
+                    OnRedirectToLogin = context =>
+                    {
+                        if (context.Request.Path.StartsWithSegments("/api"))
+                        {
+                            context.Response.Clear();
+                            context.Response.StatusCode = 401;
+                            return Task.CompletedTask;
+                        }
+
+                        context.Response.Redirect(context.RedirectUri);
+
+                        return Task.CompletedTask;
+                    }
+                };
+            });
 
             // Adicionar o MVC.
             services.AddMvc()
@@ -84,6 +109,13 @@ namespace IPTGram
                 scope.ServiceProvider.GetRequiredService<DbInitializer>().Seed().Wait();
             }
 
+            // Página de erros em modo de desenvolvimento.
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+                app.UseDatabaseErrorPage();
+            }
+
             // Permitir que outros servidores acedam aos dados.
             app.UseCors(corsOptions =>
             {
@@ -96,8 +128,17 @@ namespace IPTGram
             // Adicionar autenticação.
             app.UseAuthentication();
 
+            // Adicionar suporte para ficheiros estáticos (pasta wwwroot)
+            app.UseStaticFiles();
+
             // Adicionar o MVC.
-            app.UseMvc();
+            app.UseMvc(routes =>
+            {
+                // Permitir conventions-based routing.
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Home}/{action=Index}/{id?}");
+            });
         }
     }
 }

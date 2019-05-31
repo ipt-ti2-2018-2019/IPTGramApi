@@ -1,0 +1,1 @@
+﻿Este ficheiro serve apenas para preservar a pasta no git.

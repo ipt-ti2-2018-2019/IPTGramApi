@@ -10,7 +10,22 @@ using Newtonsoft.Json;
 
 namespace IPTGram.ModelBinders
 {
-    // https://www.thomaslevesque.com/2018/09/04/handling-multipart-requests-with-json-and-file-uploads-in-asp-net-core/
+    /// <summary>
+    /// Esta classe pode ser usada num Model que precise de receber tanto JSON, como ficheiros.
+    /// 
+    /// Usa-se desta forma:
+    /// public class Exemplo
+    /// {
+    ///     // Os dados da pessoa vêm como JSON, logo
+    ///     // quero suportar isso (por defeito, poucos servidores suportam)
+    ///     [ModelBinder(typeof(JsonFormFileModelBinder))]
+    ///     public Pessoa Pessoa { get; set; }
+    ///     
+    ///     public IFormFile Fotografia { get; set; }
+    /// }
+    /// 
+    /// https://www.thomaslevesque.com/2018/09/04/handling-multipart-requests-with-json-and-file-uploads-in-asp-net-core/
+    /// </summary>
     public class JsonFormFileModelBinder : IModelBinder
     {
         private readonly IOptions<MvcJsonOptions> _jsonOptions;
@@ -40,7 +55,21 @@ namespace IPTGram.ModelBinders
             var rawValue = valueResult.FirstValue;
 
             // Deserialize the JSON
-            var model = JsonConvert.DeserializeObject(rawValue, bindingContext.ModelType, _jsonOptions.Value.SerializerSettings);
+            object model = null;
+            try
+            {
+                model = JsonConvert.DeserializeObject(rawValue, bindingContext.ModelType, _jsonOptions.Value.SerializerSettings);
+            }
+            catch (JsonSerializationException e)
+            {
+                bindingContext.ModelState.TryAddModelError(bindingContext.ModelName, e, bindingContext.ModelMetadata);
+                return;
+            }
+            catch (Exception)
+            {
+                bindingContext.ModelState.TryAddModelError(bindingContext.ModelName, bindingContext.ModelMetadata.ModelBindingMessageProvider.ValueIsInvalidAccessor(rawValue));
+                return;
+            }
 
             // Now, bind each of the IFormFile properties from the other form parts
             foreach (var property in bindingContext.ModelMetadata.Properties)
